@@ -2,7 +2,7 @@
 
 ### Desafio do bootcamp "NTT DATA - Engenharia de Dados com Python" da [DIO (Digital Innovation One)](https://web.dio.me/home)
 
-### em andamento e em construção ...  
+### em andamento ...  
 
 .
 .
