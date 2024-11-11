@@ -1,6 +1,6 @@
 
 import textwrap
-from abc import ABC, abstractclassmethod, abstractproperty
+from abc import ABC, abstractmethod
 from datetime import datetime
 
 
@@ -34,25 +34,25 @@ class Conta:
 
     @classmethod
     def nova_conta(cls, cliente, numero):
-        return cls(numero, cliente)
+        return cls(numero, cliente)     #retorna instancia de conta
 
-    @property
+    @property     #atributo privado
     def saldo(self):
         return self._saldo
 
-    @property
+    @property     #atributo privado
     def numero(self):
         return self._numero
 
-    @property
+    @property     #atributo privado
     def agencia(self):
         return self._agencia
 
-    @property
+    @property     #atributo privado
     def cliente(self):
         return self._cliente
 
-    @property
+    @property     #atributo privado
     def historico(self):
         return self._historico
 
@@ -77,10 +77,10 @@ class Conta:
         if valor > 0:
             self._saldo += valor
             print("\n--- Depósito realizado com sucesso! ---")
+            return True
         else:
             print("\nOperação falhou! O valor informado é inválido.")
-
-        return True
+            return False
 
 
 class ContaCorrente(Conta):
@@ -124,23 +124,22 @@ class Historico:
     def transacoes(self):
         return self._transacoes
 
-    def adicionar_transacao(self, transacao):
+    def adicionar_transacao(self, transacao):     #serve pra saque ou deposito
         self._transacoes.append(
             {
                 "tipo": transacao.__class__.__name__,
                 "valor": transacao.valor,
-                "data": datetime.now().strftime("%d-%m-%Y %H:%M:%s"),
+                "data": datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
             }
         )
 
 
 class Transacao(ABC):
     @property
-    @abstractproperty
     def valor(self):
         pass
 
-    @abstractclassmethod
+    @abstractmethod
     def registrar(self, conta):
         pass
 
@@ -199,7 +198,7 @@ def recuperar_conta_cliente(cliente):
         print("\nCliente não possui conta!")
         return
 
-    # FIXME: não permite cliente escolher a conta
+    # FIXME: não permite cliente escolher a conta 
     return cliente.contas[0]
 
 
@@ -302,7 +301,7 @@ def criar_conta(numero_conta, clientes, contas):
 
 def listar_contas(contas):
     for conta in contas:
-        print("=" * 100)
+        print("-" * 100)
         print(textwrap.dedent(str(conta)))
 
 
