@@ -1,9 +1,3 @@
-'''
-Para essa terceira versão do sistema bancário (v3), vamos iniciar a modelagem do sistema bancário em POO (Programação Orientada a Objetos), adicionando classes para cliente e operações básicas, depósito e saque.
-
-Atualizar a implementação para armazenar os dados de clientes e contas bancárias em objetos, ao invés de dicionários. 
-
-'''
 
 import textwrap
 from abc import ABC, abstractclassmethod, abstractproperty
