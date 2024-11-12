@@ -32,10 +32,6 @@ Já na *terceira versão do sistema bancário (v3)*, devemos iniciar a modelagem
 
 O sistema será atualizado para armazenar os dados de clientes e contas bancárias em objetos, ao invés de dicionários.
 
-...
-em andamento...
-...
-
 
 Desafio realizado por [Jessica Silva](https://www.linkedin.com/in/sdsjessica/), em 2024.
 
